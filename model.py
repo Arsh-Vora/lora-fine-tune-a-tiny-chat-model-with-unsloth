@@ -119,8 +119,10 @@ def build_instruction_examples():
         }
     ]
 
-# Step 10 - format_instruction_example (not yet solved)
-# TODO: implement
+# Step 10 - format_instruction_example
+def format_instruction_example(example: dict) -> str:
+    """Format a single instruction/response example into a structured prompt string."""
+    return f"### Instruction:\n{example['instruction']}\n\n### Response:\n{example['response']}"
 
 # Step 11 - format_all_examples (not yet solved)
 # TODO: implement
