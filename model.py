@@ -124,8 +124,17 @@ def format_instruction_example(example: dict) -> str:
     """Format a single instruction/response example into a structured prompt string."""
     return f"### Instruction:\n{example['instruction']}\n\n### Response:\n{example['response']}"
 
-# Step 11 - format_all_examples (not yet solved)
-# TODO: implement
+# Step 11 - format_all_examples
+def format_all_examples(examples: list[dict]) -> list[str]:
+    """Format every instruction/response dict in examples into a list of training strings.
+
+    Parameters:
+        examples: A list of dicts with 'instruction' and 'response' keys.
+
+    Returns:
+        list[str]: Formatted training prompt strings preserving input order.
+    """
+    return [format_instruction_example(example) for example in examples]
 
 # Step 12 - build_text_dataset (not yet solved)
 # TODO: implement
